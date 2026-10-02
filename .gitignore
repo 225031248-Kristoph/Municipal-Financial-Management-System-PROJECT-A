@@ -1,0 +1,9 @@
+# Compiled binaries
+*.exe
+*.o
+*.obj
+*.out
+
+# Debug files
+*.dSYM/
+*.pdb
