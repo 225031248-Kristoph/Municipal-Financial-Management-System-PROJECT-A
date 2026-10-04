@@ -7,7 +7,7 @@
 
 | # | Name | Student number | Responsibility |
 |---|------|----------------|----------------|
-| 1 | Hans Amakali JP | 225025426 | Employee Management |
+| 1 | `<name>` | 225025426 | Employee Management |
 | 2 | Amani Enkara | 224072536 | Budget Management |
 | 3 | Rebazar Allembe | 223122386 | Supplier Management |
 | 4 | Roberth Mupiri | 226066096 | Asset Management |
