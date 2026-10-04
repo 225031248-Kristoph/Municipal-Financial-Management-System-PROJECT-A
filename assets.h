@@ -1,5 +1,5 @@
-#ifndef ASSET_H
-#define ASSET_H
+#ifndef ASSETS_H
+#define ASSETS_H
 
 int getAssetCount(void);
 int getAssetId(int index);
