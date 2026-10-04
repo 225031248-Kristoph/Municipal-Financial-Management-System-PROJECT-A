@@ -7,7 +7,7 @@
 
 | # | Name | Student number | Responsibility |
 |---|------|----------------|----------------|
-| 1 | `<name>` | 225025426 | Employee Management |
+| 1 | Hans Amakali JP | 225025426 | Employee Management |
 | 2 | Amani Enkara | 224072536 | Budget Management |
 | 3 | Rebazar Allembe | 223122386 | Supplier Management |
 | 4 | Roberth Mupiri | 226066096 | Asset Management |
@@ -40,8 +40,6 @@ MFMS/
 |-- suppliers.c / suppliers.h
 |-- assets.c / assets.h
 |-- reports.c / reports.h
-|-- validation.c / validation.h
-|-- common.h
 |-- docs/   (technical report, contribution records)
 |-- tests/  (test plan)
 |-- README.md
@@ -52,13 +50,13 @@ MFMS/
 Requires GCC.
 
 ```
-gcc -std=c99 -Wall -Wextra -o mfms main.c employees.c budget.c suppliers.c assets.c reports.c validation.c
+gcc -std=c99 -Wall -Wextra -o mfms main.c employees.c budget.c suppliers.c assets.c reports.c
 ```
 
 ## How to Run
 
 ```
-mfms.exe        # Windows
+.\mfms.exe       # Windows (PowerShell)
 ```
 
 ## Individual Responsibilities
@@ -70,7 +68,7 @@ mfms.exe        # Windows
 | 3 | suppliers.c/.h | |
 | 4 | assets.c/.h | |
 | 5 | reports.c/.h | |
-| 6 | main.c, validation.c/.h, common.h | |
+| 6 | main.c | |
 | 7 | README.md, docs/, tests/ | Repo setup, PR reviews, test plan, report assembly |
 
 ## Testing
