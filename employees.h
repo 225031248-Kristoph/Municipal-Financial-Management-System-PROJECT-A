@@ -22,8 +22,6 @@ void displayEmployees(void);
 void searchEmployee(void);
 double calculateSalary(const Employee *employee);
 
-/* Read-only access for other modules (e.g. reports.c).
-   index runs from 0 to getEmployeeCount() - 1. */
 int getEmployeeCount(void);
 int getEmployeeId(int index);
 const char *getEmployeeName(int index);
