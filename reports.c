@@ -1,4 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+#include "employees.h"
 #include "reports.h"
+#include "budget.h"
+#include "suppliers.h"
+#include "asset.h"
 
 void displayReportsMenu(void) {
     printf("\n=== MUNICIPAL REPORTS MODULE ===\n");
