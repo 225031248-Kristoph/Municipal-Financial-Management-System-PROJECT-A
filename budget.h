@@ -1,12 +1,24 @@
 #ifndef BUDGET_H
 #define BUDGET_H
 
-int getBudgetCount(void);
-char* getBudgetName(int index);
-double getBudgetRevenue(int index);
-double getBudgetExpenditure(int index);
+#include <stdio.h>
+#include <string.h>
 
-void display_report(void);
-void display_exceeded_summary(void);
+#define MAX_NAME_LEN 50
+#define MAX_STATUS_LEN 20
+#define MAX_DEPTS 10
+
+typedef struct {
+    char name[MAX_NAME_LEN];
+    double allocated_budget;
+    double expenditure;
+    double remaining_budget;
+    char status[MAX_STATUS_LEN];
+} Department;
+
+void input_department(Department *dept);
+void calculate_budget(Department *dept);
+void display_report(const Department *dept);
+void display_exceeded_summary(const Department depts[], int count);
 
 #endif

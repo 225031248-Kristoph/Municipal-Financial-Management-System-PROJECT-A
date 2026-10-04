@@ -8,16 +8,16 @@ int assetCount = 0;
 void addAsset()
 {
     printf("\nEnter Asset ID: ");
-    scanf("%d", &assets[assetCount].id);
+    scanf("%d", &assets[assetCount].assetID);
 
     printf("Enter Asset Name: ");
-    scanf(" %[^\n]", assets[assetCount].name);
+    scanf(" %[^\n]", assets[assetCount].assetName);
 
     printf("Enter Asset Type: ");
-    scanf(" %[^\n]", assets[assetCount].type);
+    scanf(" %[^\n]", assets[assetCount].assetType);
 
     printf("Enter Purchase Value: ");
-    scanf("%f", &assets[assetCount].value);
+    scanf("%f", &assets[assetCount].purchaseValue);
 
     printf("Enter Department: ");
     scanf(" %[^\n]", assets[assetCount].department);
@@ -34,10 +34,10 @@ void displayAssets()
 {
     for (int i = 0; i < assetCount; i++)
     {
-        printf("\nAsset ID: %d", assets[i].id);
-        printf("\nName: %s", assets[i].name);
-        printf("\nType: %s", assets[i].type);
-        printf("\nValue: %.2f", assets[i].value);
+        printf("\nAsset ID: %d", assets[i].assetID);
+        printf("\nName: %s", assets[i].assetName);
+        printf("\nType: %s", assets[i].assetType);
+        printf("\nValue: %.2f", assets[i].purchaseValue);
         printf("\nDepartment: %s", assets[i].department);
         printf("\nCondition: %s\n", assets[i].condition);
     }
@@ -52,12 +52,12 @@ void searchAsset()
 
     for (int i = 0; i < assetCount; i++)
     {
-        if (assets[i].id == id)
+        if (assets[i].assetID == id)
         {
             printf("\nAsset Found!");
-            printf("\nName: %s", assets[i].name);
-            printf("\nType: %s", assets[i].type);
-            printf("\nValue: %.2f", assets[i].value);
+            printf("\nName: %s", assets[i].assetName);
+            printf("\nType: %s", assets[i].assetType);
+            printf("\nValue: %.2f", assets[i].purchaseValue);
             printf("\nDepartment: %s", assets[i].department);
             printf("\nCondition: %s\n", assets[i].condition);
             return;

@@ -1,13 +1,16 @@
 #ifndef ASSETS_H
 #define ASSETS_H
 
-int getAssetCount(void);
-int getAssetId(int index);
-char* getAssetName(int index);
-char* getAssetType(int index);
-double getAssetValue(int index);
-char* getAssetDepartment(int index);
-char* getAssetCondition(int index);
+#define MAX_ASSETS 100
+
+typedef struct {
+    int assetID;
+    char assetName[100];
+    char assetType[50];
+    float purchaseValue;
+    char department[50];
+    char condition[50];
+} Asset;
 
 void addAsset(void);
 void displayAssets(void);

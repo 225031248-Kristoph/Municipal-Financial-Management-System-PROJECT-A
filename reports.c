@@ -4,7 +4,7 @@
 #include "reports.h"
 #include "budget.h"
 #include "suppliers.h"
-#include "asset.h"
+#include "assets.h"
 
 void displayReportsMenu(void) {
     printf("\n=== MUNICIPAL REPORTS MODULE ===\n");
