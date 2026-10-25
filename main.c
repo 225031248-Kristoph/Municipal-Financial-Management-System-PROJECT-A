@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "employees.h"
+#include "suppliers.h"
 #include "budget.h"
 #include "assets.h"
 #include "reports.h"
@@ -200,8 +201,8 @@ int main(void)
                 break;
 
             case 3:
-                printf("\nSupplier Management is waiting for the Supplier module.\n");
-                break;
+                  supplierMenu();
+                  break;
 
             case 4:
                 assetMenu();
