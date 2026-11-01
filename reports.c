@@ -25,8 +25,8 @@ void generateEmployeeReport(void) {
     }
 
     double totalSalary = 0.0;
-    double minSalary = getEmployeeTotalSalary(0);
-    double maxSalary = getEmployeeTotalSalary(0);
+    double minSalary = 999999.0;
+    double maxSalary = 0.0;
 
     printf("%-6s %-20s %-15s\n", "ID", "Name", "Total Salary (NAD)");
     printf("--------------------------------------------------\n");
@@ -89,7 +89,27 @@ void generateBudgetReport(void) {
 
 void generateSupplierReport(void) {
     printf("\n--- SUPPLIER REGISTER REPORT ---\n");
-    printf("Supplier register data is managed via the Supplier module.\n");
+    
+    int count = getSupplierCount();
+    if (count == 0) {
+        printf("No supplier records found in the register.\n");
+        return;
+    }
+
+    printf("%-8s %-20s %-15s %-20s\n", "ID", "Name", "Category", "Contact");
+    printf("--------------------------------------------------------------------\n");
+
+    for (int i = 0; i < count; i++) {
+        const Supplier *supplier = getSupplier(i);
+        if (supplier) {
+            // Note: Adjust the field names (e.g., supplierID, name) 
+            // to match whatever your teammate wrote in suppliers.h
+            printf("%-8d %-20s %-15s %-20s\n",
+                   supplier->supplierID, supplier->name, supplier->category, supplier->contact);
+        }
+    }
+    printf("--------------------------------------------------------------------\n");
+    printf("Total Registered Suppliers: %d\n", count);
 }
 
 void generateAssetReport(void) {
