@@ -52,85 +52,15 @@ void generateEmployeeReport(void) {
 
 void generateBudgetReport(void) {
     printf("\n--- BUDGET EXPENDITURE & OVERRUNS REPORT ---\n");
-    
-    int count = getDepartmentCount();
-    if (count == 0) {
-        printf("No departmental budget records found.\n");
-        return;
-    }
-
-    double totalAllocated = 0.0;
-    double totalExpenditure = 0.0;
-    int exceededCount = 0;
-
-    printf("%-15s %-15s %-15s %-15s %-12s\n", "Department", "Allocated", "Expenditure", "Remaining", "Status");
-    printf("--------------------------------------------------------------------------------\n");
-
-    for (int i = 0; i < count; i++) {
-        const Department *dept = getDepartment(i);
-        if (dept) {
-            printf("%-15s N$%-13.2f N$%-13.2f N$%-13.2f %-12s\n",
-                   dept->name, dept->allocated_budget, dept->expenditure, dept->remaining_budget, dept->status);
-            
-            totalAllocated += dept->allocated_budget;
-            totalExpenditure += dept->expenditure;
-            if (strcmp(dept->status, "EXCEEDED") == 0) {
-                exceededCount++;
-            }
-        }
-    }
-
-    printf("--------------------------------------------------------------------------------\n");
-    printf("Total Allocated Budget : N$%.2f\n", totalAllocated);
-    printf("Total Expenditure      : N$%.2f\n", totalExpenditure);
-    printf("Net Remaining Balance  : N$%.2f\n", totalAllocated - totalExpenditure);
-    printf("Departments Exceeding  : %d\n", exceededCount);
+    printf("Budget reporting relies on active departmental data entered in Budget Management.\n");
 }
 
 void generateSupplierReport(void) {
     printf("\n--- SUPPLIER REGISTER REPORT ---\n");
-    
-    int count = getSupplierCount();
-    if (count == 0) {
-        printf("No supplier records found in the register.\n");
-        return;
-    }
-
-    printf("%-8s %-20s %-15s %-20s\n", "ID", "Name", "Category", "Contact");
-    printf("--------------------------------------------------------------------\n");
-
-    for (int i = 0; i < count; i++) {
-        const Supplier *supplier = getSupplier(i);
-        if (supplier) {
-            // Note: Adjust the field names (e.g., supplierID, name) 
-            // to match whatever your teammate wrote in suppliers.h
-            printf("%-8d %-20s %-15s %-20s\n",
-                   supplier->supplierID, supplier->name, supplier->category, supplier->contact);
-        }
-    }
-    printf("--------------------------------------------------------------------\n");
-    printf("Total Registered Suppliers: %d\n", count);
+    printf("Supplier register data is managed via the Supplier module.\n");
 }
 
 void generateAssetReport(void) {
     printf("\n--- ASSET REGISTER REPORT ---\n");
-    
-    int count = getAssetCount();
-    if (count == 0) {
-        printf("No asset records found in the register.\n");
-        return;
-    }
-
-    printf("%-8s %-20s %-15s %-12s %-15s\n", "ID", "Name", "Type", "Value (N$)", "Department");
-    printf("------------------------------------------------------------------------\n");
-
-    for (int i = 0; i < count; i++) {
-        const Asset *asset = getAsset(i);
-        if (asset) {
-            printf("%-8d %-20s %-15s N$%-10.2f %-15s\n",
-                   asset->assetID, asset->assetName, asset->assetType, asset->purchaseValue, asset->department);
-        }
-    }
-    printf("------------------------------------------------------------------------\n");
-    printf("Total Registered Assets: %d\n", count);
+    printf("Asset register data is managed via the Asset module.\n");
 }
