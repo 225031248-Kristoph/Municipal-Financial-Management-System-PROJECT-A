@@ -17,39 +17,8 @@ void displayReportsMenu(void) {
 
 void generateEmployeeReport(void) {
     printf("\n--- EMPLOYEE SALARY REPORT ---\n");
-    
-    int count = getEmployeeCount();
-    if (count == 0) {
-        printf("No employee records found in memory.\n");
-        return;
-    }
-
-    double totalSalary = 0.0;
-    double minSalary = 999999.0;
-    double maxSalary = 0.0;
-
-    printf("%-6s %-20s %-15s\n", "ID", "Name", "Total Salary (NAD)");
-    printf("--------------------------------------------------\n");
-
-    for (int i = 0; i < count; i++) {
-        int id = getEmployeeId(i);
-        const char *name = getEmployeeName(i);
-        double salary = getEmployeeTotalSalary(i);
-
-        printf("%-6d %-20s NAD %-12.2f\n", id, name, salary);
-        
-        totalSalary += salary;
-        if (salary < minSalary) minSalary = salary;
-        if (salary > maxSalary) maxSalary = salary;
-    }
-
-    printf("--------------------------------------------------\n");
-    printf("Total Employees: %d\n", count);
-    printf("Average Salary:  NAD %.2f\n", totalSalary / count);
-    printf("Minimum Salary:  NAD %.2f\n", minSalary);
-    printf("Maximum Salary:  NAD %.2f\n", maxSalary);
+    printf("Employee salary data is managed via the Employee module.\n");
 }
-
 void generateBudgetReport(void) {
     printf("\n--- BUDGET EXPENDITURE & OVERRUNS REPORT ---\n");
     printf("Budget reporting relies on active departmental data entered in Budget Management.\n");
