@@ -85,7 +85,6 @@ void generateAssetReport(void) {
     printf("                ASSET REGISTER REPORT                 \n");
     printf("======================================================\n");
     
-    // Calls the display function directly from assets.h
     displayAssets();
 
     printf("======================================================\n");
