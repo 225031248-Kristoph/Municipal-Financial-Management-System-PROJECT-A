@@ -69,12 +69,24 @@ void generateBudgetReport(void) {
 }
 
 void generateSupplierReport(void) {
-    printf("\n======================================================\n");
-    printf("                SUPPLIER REGISTER REPORT              \n");
-    printf("======================================================\n");
-    printf("Supplier register data is coordinated via the Supplier module.\n");
-    printf("======================================================\n");
+    printf("\n======================================================================================\n");
+    printf("                                SUPPLIER REGISTER REPORT                              \n");
+    printf("======================================================================================\n");
 
+    int count = getSupplierCount();
+    if (count == 0) {
+        printf("No supplier records found in system.\n");
+    } else {
+        for (int i = 0; i < count; i++) {
+            Supplier s = getSupplier(i);
+            printf("ID: %-10s | Name: %-25s | Email: %-25s | Phone: %-15s | Town: %-15s\n",
+                   s.id, s.name, s.email, s.phone, s.town);
+        }
+        printf("--------------------------------------------------------------------------------------\n");
+        printf("Total Suppliers : %d\n", count);
+    }
+
+    printf("======================================================================================\n");
     printf("\nPress Enter to go back...");
     while (getchar() != '\n');
     getchar();
